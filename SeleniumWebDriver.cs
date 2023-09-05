@@ -12,8 +12,10 @@ using OpenQA.Selenium.Chrome;
         {   
             ///Variavel onde será armazenados os dados
             string DadosDoCurso;
-
             string SobreCurso;
+
+            string CargaHoraria;
+            string NomeCurso;
 
             ////Instanciando  a classe para abrir o navegador chrome
             ChromeDriver webDriver = new ChromeDriver();
@@ -48,9 +50,20 @@ using OpenQA.Selenium.Chrome;
 
             ///Capturando dados sobre o curso, o que ira aprender, nome do professor
             SobreCurso = webDriver.FindElement(By.ClassName("course-container--instructor")).Text;
-           
 
-            
+            ///Looping para capturar informações sobre os dados
+            foreach (string x in DadosDoCurso.Split(new string[] { "\r\n", "\r", "\n" },StringSplitOptions.None)) 
+             {
+                if (x == "8h")
+                {
+                    CargaHoraria = x;
+                }
+
+                if (x == "RPA:")
+                {
+                    NomeCurso = x;
+                }
+             }
 
         }
 
