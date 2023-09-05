@@ -1,14 +1,28 @@
 ﻿using System;
+using System.Web;
+using System.Text;
+using System.IO;
+using Desafio_AeC;
+
 
 namespace Desafio_AeC
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Desafio_AeC.SeleniumWebDriver.Browser();
+
+            }
+            catch(IOException ex)
+            {
+                Console.WriteLine("O erro é" + ex);
+            }
+      
         }
 
-        class
+        
     }
 }
