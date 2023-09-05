@@ -8,5 +8,7 @@ namespace Desafio_AeC
         {
             Console.WriteLine("Hello World!");
         }
+
+        class
     }
 }
